@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 html {
   background: url("Images/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -10,4 +12,46 @@ body {
   font-family: "Times New Roman", Times, serif;
   background-color: transparent;
   color: white;
+  position: relative;
+  font-family: "Press Start 2P", cursive;
+}
+#mainContainer {
+  margin-top: 5%;
+}
+
+.logo {
+  filter: invert(100%);
+  margin-bottom: 1%;
+  margin-top: 5%;
+}
+
+#header {
+  font-size: 3vw;
+  margin-top: 3%;
+  color: white;
+  box-shadow: palegreen 0 0 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.logo,
+.btn-outline-primary {
+  margin-right: 15%;
+  margin-left: 15%;
+  width: 18%;
+}
+
+.btn-outline-primary {
+  border-color: white;
+  border-width: 2px;
+  color: white;
+  font-family: sans-serif;
+  font-size: 1.5vw;
+  margin-bottom: 10%;
+}
+
+.btn-outline-primary:hover {
+  color: black;
+  background-color: white;
+  border-color: black;
 }
