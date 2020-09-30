@@ -1,3 +1,7 @@
+var gameWindowEl = document.getElementById("gameWindow");
+var currentWidth = "400px";
+var currentHeight = "500px";
+
 // Set the width of the sidebar to 15% and the left margin of the page content to 15%
 function openNav() {
   document.getElementById("mySidebar").style.width = "15%";
@@ -8,7 +12,36 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
 
-function initPage() {}
+function initPage() {
+  createGames(gameData);
+}
+function changeGame(e) {
+  e = e.target;
+  document.getElementById("gameContainer").removeChild(gameWindowEl);
+  let newGame = document.createElement("embed");
+  newGame.id = "gameWindow";
+  newGame.width = currentWidth;
+  newGame.height = currentHeight;
+  newGame.scale = "tofit";
+  newGame.src = e.value;
+  document.getElementById("gameContainer").appendChild(newGame);
+  gameWindowEl = newGame;
+}
+
+function createGames(games) {
+  for (let i = 0; i < games.length; i++) {
+    let anc = document.createElement("a");
+    anc.href = "#";
+    anc.innerHTML = games[i][1];
+    if (anc.innerHTML.length > 8) {
+      anc.style.fontSize = "1.2vw";
+    }
+    anc.value = games[i][0];
+    anc.classList.add("game");
+    anc.addEventListener("click", changeGame);
+    document.getElementById("games").appendChild(anc);
+  }
+}
 
 window.addEventListener("load", initPage);
 
@@ -57,3 +90,39 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 }
+
+var gameData = [
+  ["Games/2048.swf", "2048"],
+  ["Games/btd5.swf", "Bloons 5"],
+  ["Games/chess.swf", "Chess"],
+  ["Games/CTC1.swf", "Crush The Castle 1"],
+  ["Games/CTC2.swf", "Crush The Castle 2"],
+  ["Games/doom.swf", "Doom"],
+  ["Games/ducklife2.swf", "Duck Life 2"],
+  ["Games/ducklife3.swf", "Duck Life 3"],
+  ["Games/ducklife4.swf", "Duck Life 4"],
+  ["Games/happyWheels.swf", "Happy Wheels"],
+  ["Games/impossiblequiz.swf", "Impossible Quiz 1"],
+  ["Games/impossiblequiz2.swf", "Impossible Quiz 2"],
+  ["Games/isaac.swf", "The Binding Of Isaac Flash"],
+  ["Games/learntofly.swf", "Learn To Fly 1"],
+  ["Games/learntofly2.swf", "Learn To Fly 2"],
+  ["Games/learntofly3.swf", "Learn To Fly 3"],
+  ["Games/poker.swf", "Poker"],
+  ["Games/PPADougnut.swf", "Papa's Dougnuteria"],
+  ["Games/PPAFreezeria.swf", "Papa's Freezeria"],
+  ["Games/PPAHotdog.swf", "Papa's Hotdogeria"],
+  ["Games/PPAPizza.swf", "Papa's Pizzeria"],
+  ["Games/PPAScoops.swf", "Papa's Scooperia"],
+  ["Games/PPASushi.swf", "Papa's Susheria"],
+  ["Games/PPAWings.swf", "Papa's Wingeria"],
+  ["Games/raze2.swf", "Raze 2"],
+  ["Games/raze3.swf", "Raze 3"],
+  ["Games/run3.swf", "Run 3"],
+  ["Games/S&S2.swf", "Swords and Sandals 2"],
+  ["Games/SFH1.swf", "Strike Force Heros 1"],
+  ["Games/SFH2.swf", "Strike Force Heros 2"],
+  ["Games/supermario63.swf", "Super Mario 63"],
+  ["Games/tanktrouble.swf", "Tank Trouble"],
+  ["Games/tetris.swf", "Tetris"],
+];
