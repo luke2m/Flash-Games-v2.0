@@ -8,6 +8,7 @@
   background-size: cover;
   filter: sepia(100%) saturate(100%) brightness(70%) hue-rotate(90deg);
 }
+
 #gamesHTML,
 #contactHTML {
   background: url("Images/stoneFrame.png") no-repeat center center fixed;
@@ -18,9 +19,11 @@
   filter: sepia(100%) saturate(100%) brightness(70%) hue-rotate(90deg);
   background-color: lightgray;
 }
+
 #gamesHTML {
   filter: none;
 }
+
 body {
   background-color: transparent;
   color: white;
@@ -114,7 +117,7 @@ body {
 }
 
 .openbtn {
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
   background-color: white;
   color: black;
@@ -130,8 +133,9 @@ body {
   margin-top: 20%;
 }
 
-#navButton {
-  font-size: 25px;
+#optionButton {
+  margin-top: 5%;
+  font-size: 28px;
 }
 
 #gameContainer {
@@ -142,9 +146,19 @@ body {
 
 #gameContainerHeader {
   pointer-events: stroke;
-  border: solid white 2px;
-  margin-left: 40%;
-  margin-right: 40%;
+  color: inherit;
+  text-decoration: none;
+  margin-left: 42%;
+  margin-right: 42%;
+}
+
+.slider {
+  font-size: 2vw;
+}
+
+#widthSlider,
+#heightSlider {
+  width: 100%;
 }
 
 embed {

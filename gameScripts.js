@@ -1,31 +1,32 @@
+window.addEventListener("load", initPage);
+dragElement(document.getElementById("gameContainer"));
+
 var gameWindowEl = document.getElementById("gameWindow");
 var currentWidth = "400px";
 var currentHeight = "500px";
 
 // Set the width of the sidebar to 15% and the left margin of the page content to 15%
-function openNav() {
-  document.getElementById("mySidebar").style.width = "15%";
+function openGameNav() {
+  document.getElementById("gameSidebar").style.width = "15%";
 }
-
-// Set the width of the sidebar to 0 and the left margin of the page content to 0
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
+function openOptionNav() {
+  document.getElementById("optionSidebar").style.width = "15%";
+}
+function closeGameNav() {
+  document.getElementById("gameSidebar").style.width = "0";
+}
+function closeOptionNav() {
+  document.getElementById("optionSidebar").style.width = "0";
 }
 
 function initPage() {
   createGames(gameData);
-}
-function changeGame(e) {
-  e = e.target;
-  document.getElementById("gameContainer").removeChild(gameWindowEl);
-  let newGame = document.createElement("embed");
-  newGame.id = "gameWindow";
-  newGame.width = currentWidth;
-  newGame.height = currentHeight;
-  newGame.scale = "tofit";
-  newGame.src = e.value;
-  document.getElementById("gameContainer").appendChild(newGame);
-  gameWindowEl = newGame;
+  document
+    .getElementById("widthSlider")
+    .addEventListener("change", updateWindow);
+  document
+    .getElementById("heightSlider")
+    .addEventListener("change", updateWindow);
 }
 
 function createGames(games) {
@@ -43,10 +44,30 @@ function createGames(games) {
   }
 }
 
-window.addEventListener("load", initPage);
+function changeGame(e) {
+  e = e.target;
+  document.getElementById("gameContainer").removeChild(gameWindowEl);
+  let newGame = document.createElement("embed");
+  newGame.id = "gameWindow";
+  newGame.width = currentWidth;
+  newGame.height = currentHeight;
+  newGame.scale = "tofit";
+  newGame.src = e.value;
+  document.getElementById("gameContainer").appendChild(newGame);
+  gameWindowEl = newGame;
+}
 
-dragElement(document.getElementById("gameContainer"));
+function updateWindow(e) {
+  e = e.target;
+  let newWidth = parseInt(document.getElementById("widthSlider").value) * 10;
+  let newHeight = parseInt(document.getElementById("heightSlider").value) * 10;
 
+  gameWindowEl.width = newWidth;
+  gameWindowEl.height = newHeight;
+
+  currentWidth = newWidth;
+  currentHeight = newHeight;
+}
 function dragElement(elmnt) {
   var pos1 = 0,
     pos2 = 0,
@@ -72,6 +93,7 @@ function dragElement(elmnt) {
   }
 
   function elementDrag(e) {
+    document.getElementById("arrowPrompt").hidden = true;
     e = e || window.event;
     e.preventDefault();
     // calculate the new cursor position:

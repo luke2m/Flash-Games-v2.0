@@ -25,8 +25,9 @@
   </head>
   <body>
     <div id="gameContainer" class="text-center">
+      <p id="arrowPrompt">Try dragging the arrow!</p>
       <div id="gameContainerHeader">
-        <p>&#8593;</p>
+        <p draggable="true">&#8593;</p>
       </div>
       <embed
         src="Games/tetris.swf"
@@ -36,15 +37,37 @@
         id="gameWindow"
       />
     </div>
-    <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+    <div id="gameSidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeGameNav()"
         >&times;</a
       >
       <div id="games"></div>
     </div>
+    <div id="optionSidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeOptionNav()"
+        >&times;</a
+      >
+      <div class="slider text-center">
+        <br /><br /><br />
+        <label for="widthSlider">Width</label>
+        <div>
+          <input id="widthSlider" type="range" min="1" max="100" value="40" />
+        </div>
+      </div>
+      <div class="slider text-center">
+        <br /><br />
+        <label for="heightSlider">Height</label>
+        <div>
+          <input id="heightSlider" type="range" min="1" max="100" value="50" />
+        </div>
+      </div>
+    </div>
     <div id="main" class="text-left">
-      <button class="openbtn" id="navButton" onclick="openNav()">
+      <button class="openbtn" id="gameButton" onclick="openGameNav()">
         &#8594;
+      </button>
+      <button class="openbtn" id="optionButton" onclick="openOptionNav()">
+        &#9881;
       </button>
     </div>
 
