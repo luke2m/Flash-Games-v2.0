@@ -123,6 +123,7 @@ var gameData = [
   ["Games/ducklife2.swf", "Duck Life 2"],
   ["Games/ducklife3.swf", "Duck Life 3"],
   ["Games/ducklife4.swf", "Duck Life 4"],
+  ["Games/duneBuggy.swf", "Dune Buggy"],
   ["Games/happyWheels.swf", "Happy Wheels"],
   ["Games/impossiblequiz.swf", "Impossible Quiz 1"],
   ["Games/impossiblequiz2.swf", "Impossible Quiz 2"],
