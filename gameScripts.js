@@ -141,6 +141,8 @@ var gameData = [
   ["Games/PPAWings.swf", "Papa's Wingeria"],
   ["Games/raze2.swf", "Raze 2"],
   ["Games/raze3.swf", "Raze 3"],
+  ["Games/run2.swf", "Run 2"],
+  ["Games/run3.swf", "Run 3"],
   ["Games/S&S2.swf", "Swords and Sandals 2"],
   ["Games/SFH1.swf", "Strike Force Heros 1"],
   ["Games/SFH2.swf", "Strike Force Heros 2"],
