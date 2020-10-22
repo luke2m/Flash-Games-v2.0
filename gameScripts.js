@@ -147,4 +147,5 @@ var gameData = [
   ["Games/supermario63.swf", "Super Mario 63"],
   ["Games/tanktrouble.swf", "Tank Trouble"],
   ["Games/tetris.swf", "Tetris"],
+  ["Games/zombocalypse.swf", "Zombocalypse"]
 ];
