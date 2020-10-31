@@ -115,6 +115,7 @@ function dragElement(elmnt) {
 
 var gameData = [
   ["Games/2048.swf", "2048"],
+  ["Games/boxhead.swf", "Boxhead Zombies"],
   ["Games/btd5.swf", "Bloons 5"],
   ["Games/centipede.swf", "Centipede"],
   ["Games/chess.swf", "Chess"],
