@@ -119,6 +119,8 @@ var gameData = [
   ["Games/btd5.swf", "Bloons 5"],
   ["Games/centipede.swf", "Centipede"],
   ["Games/chess.swf", "Chess"],
+  ["Games/crystalStory.swf", "Crystal Story"],
+  ["Games/crystalStory2.swf", "Crystal Story 2"],
   ["Games/CTC1.swf", "Crush The Castle 1"],
   ["Games/CTC2.swf", "Crush The Castle 2"],
   ["Games/deepfreeze.swf", "Deep Freeze"],
